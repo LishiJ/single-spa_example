@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   mode: 'development',
@@ -29,6 +30,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'html-loader',
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      }
     ],
   },
   node: {
@@ -40,9 +45,11 @@ module.exports = {
   plugins: [
     // A webpack plugin to remove/clean the output folder before building
     new CleanWebpackPlugin(),
+    // A vue plugin to load vue file
+    new VueLoaderPlugin()
   ],
   devtool: 'source-map',
-  externals: [],
+  externals: ['vue', 'vue-router'],
   devServer: {
     historyApiFallback: true
   }

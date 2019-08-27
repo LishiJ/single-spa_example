@@ -32,4 +32,11 @@ registerApplication(
   pathPrefix('/angularJS')
 );
 
+// vue
+registerApplication(
+  'vue', 
+  () => import ('./src/vue/index.js'), 
+  pathPrefix('/vue')
+);
+
 start();
