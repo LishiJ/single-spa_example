@@ -1,8 +1,11 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router'
 import singleSpaVue from 'single-spa-vue';
 import App from './App.vue'
 import router from './router';
 
+Vue.config.productionTip = false;
+Vue.use(VueRouter)
 
 const vueLifecycles = singleSpaVue({
   Vue,
@@ -12,14 +15,8 @@ const vueLifecycles = singleSpaVue({
   },
 })
 
-export const bootstrap = [
-  vueLifecycles.bootstrap
-]
+export const bootstrap = vueLifecycles.bootstrap
 
-export const mount = [
-  vueLifecycles.mount
-]
+export const mount = vueLifecycles.mount
 
-export const unmount = [
-  vueLifecycles.unmount
-]
+export const unmount = vueLifecycles.unmount

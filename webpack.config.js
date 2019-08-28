@@ -49,7 +49,7 @@ module.exports = {
     new VueLoaderPlugin()
   ],
   devtool: 'source-map',
-  externals: ['vue', 'vue-router'],
+  // externals: ['vue', 'vue-router'],
   devServer: {
     historyApiFallback: true
   }
