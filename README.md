@@ -15,7 +15,7 @@
 
 ``` sh
 # clone project
-git clone https://github.com/LishiJ/single-spa_example.git
+git clone https://github.com/seiwhale/single-spa_example.git
 # yarn / npm install
 yarn
 # run
